@@ -19,7 +19,4 @@ NYC_BOUNDS = {
 # Nivel de significancia para las pruebas de hipótesis
 ALPHA = 0.05
 
-# Zona horaria local: pickup_datetime viene en UTC
-LOCAL_TZ = "America/New_York"
-
 RANDOM_STATE = 42

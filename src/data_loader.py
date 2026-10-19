@@ -16,7 +16,12 @@ RAW_COLUMNS = [
 
 
 def load_raw_data(path=RAW_DATA_PATH):
-    """Lee uber.csv, descarta la columna índice sin nombre y convierte la fecha."""
+    """Lee uber.csv, descarta la columna índice sin nombre y convierte la fecha.
+
+    Aunque pickup_datetime trae el sufijo "UTC", la distribución horaria corresponde a la hora
+    local de Nueva York (mínimo a las 5 h, pico a las 19 h, caída a las 16 h por el cambio de turno
+    de los taxis), por lo que se conserva la hora registrada sin conversión de zona horaria.
+    """
     if not path.exists():
         raise FileNotFoundError(
             f"No se encontró {path}. Descarga el dataset siguiendo data/README.md"
@@ -25,7 +30,7 @@ def load_raw_data(path=RAW_DATA_PATH):
     df = df.drop(columns=[c for c in df.columns if c.startswith("Unnamed")])
     df["pickup_datetime"] = pd.to_datetime(
         df["pickup_datetime"], utc=True, errors="coerce"
-    )
+    ).dt.tz_localize(None)
     return df[RAW_COLUMNS]
 
 

@@ -21,7 +21,7 @@ kaggle datasets download -d yasserh/uber-fares-dataset -p data/raw --unzip
 |---------|------|-------------|
 | `key` | texto | Identificador único del viaje |
 | `fare_amount` | decimal | Tarifa del viaje en dólares (USD) |
-| `pickup_datetime` | fecha-hora (UTC) | Fecha y hora de inicio del viaje |
+| `pickup_datetime` | fecha-hora | Fecha y hora de inicio del viaje (dice "UTC" pero está en hora local de NYC, ver notebook 01) |
 | `pickup_longitude` | decimal | Longitud del punto de recogida |
 | `pickup_latitude` | decimal | Latitud del punto de recogida |
 | `dropoff_longitude` | decimal | Longitud del punto de destino |
