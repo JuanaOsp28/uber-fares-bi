@@ -1,0 +1,9 @@
+hipotesis,prueba,estadistico,p_valor,efecto,decision
+H1: Distancia vs. tarifa,Correlación de Spearman,0.8671916297778024,0.00e+00,rho = 0.867 | Pearson r = 0.898,Se rechaza H0
+H2: Tarifa/km hora pico vs. no pico,Mann-Whitney U,3983643917.0,6.14e-303,"r biserial = 0.111 | mediana pico = 4.03, no pico = 3.73",Se rechaza H0
+H2b: Tarifa hora pico vs. no pico,Mann-Whitney U,3489121995.5,2.37e-19,"r biserial = -0.027 | mediana pico = 8.50, no pico = 8.50",Se rechaza H0
+H3: Tarifa fin de semana vs. entre semana,Mann-Whitney U,3752968052.5,1.49e-01,"r biserial = 0.004 | mediana fin de semana = 8.50, entre semana = 8.50",No se rechaza H0
+H4: Tarifa/km entre años,Kruskal-Wallis,8334.897863232647,0.00e+00,épsilon² = 0.0434 | 7 grupos,Se rechaza H0
+H4b: Tarifa/km después vs. antes de sep-2012,Mann-Whitney U,5672392146.0,0.00e+00,"r biserial = 0.258 | mediana después = 4.20, antes = 3.52",Se rechaza H0
+H5: Tarifa según pasajeros,Kruskal-Wallis,168.53565014975177,1.50e-34,épsilon² = 0.0009 | 6 grupos,Se rechaza H0
+H6: Franja horaria vs. distancia,Chi-cuadrado de independencia,3322.691501959393,0.00e+00,V de Cramér = 0.076 | gl = 12,Se rechaza H0
