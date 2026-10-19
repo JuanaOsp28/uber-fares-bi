@@ -1,0 +1,8 @@
+regla,eliminados,restantes,pct_eliminado
+Registros originales,0,200000,0.0
+Valores nulos,1,199999,0.0
+Claves duplicadas,0,199999,0.0
+"Tarifa fuera de [2.5, 250] USD",28,199971,0.01
+"Pasajeros fuera de [1, 6]",709,199262,0.35
+Coordenadas fuera de NYC,4376,194886,2.19
+"Distancia fuera de [0.1, 100] km",3110,191776,1.56
