@@ -110,4 +110,4 @@ y tipo de trayecto.
 
 ## Video
 
-Enlace al video explicativo: _pendiente_
+Video explicativo del proyecto: [ver `Actividad 3.mp4`](./Actividad%203.mp4).
