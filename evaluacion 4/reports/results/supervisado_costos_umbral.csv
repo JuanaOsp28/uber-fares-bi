@@ -1,0 +1,5 @@
+criterio,llamadas,suscripciones,recall,ganancia
+llamar a todos,9043,1058,1.0,1537
+umbral 0.5,1933,683,0.6455576559546313,4897
+umbral costo 0.47,2170,704,0.665406427221172,4870
+umbral F1 0.62,1333,589,0.556710775047259,4557

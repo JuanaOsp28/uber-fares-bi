@@ -1,0 +1,4 @@
+,mejor_pr_auc_cv,segundos,model__C,model__min_samples_leaf,model__max_features,model__max_depth,model__l2_regularization,model__learning_rate,model__max_leaf_nodes
+Regresión logística,0.371797808164946,5.467012277000094,0.0745934328572655,,,,,,
+Random Forest,0.443310833260307,178.10368316699999,,5.0,0.3,,,,
+Gradient Boosting,0.449545777700187,22.11158165800009,,100.0,,,0.5408216580718497,0.10433781386405709,63.0
