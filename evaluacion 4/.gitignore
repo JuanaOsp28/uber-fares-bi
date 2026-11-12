@@ -1,0 +1,20 @@
+# Datos (se descargan con src/data_loader.py)
+data/raw/*
+!data/raw/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Video pesado (subir solo el enlace en el README)
+*.mp4
+*.mov
