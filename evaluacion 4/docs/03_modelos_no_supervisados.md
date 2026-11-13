@@ -30,9 +30,32 @@ a costa de perder parte de la información (documentar cuánta).
 Silhouette (calculado sobre muestra), Davies-Bouldin, Calinski-Harabasz y acuerdo entre algoritmos (ARI).
 
 ## Comparación y selección
-_(Completar: criterios usados para elegir el algoritmo y k final — métricas, estabilidad, interpretabilidad y
-tamaño de los grupos.)_
+- **k final = 4.** El Silhouette máximo (k = 2, 0,305) solo separa clientes contactados antes de los nuevos; entre k = 4
+  y k = 6 las métricas casi no cambian (Silhouette 0,164–0,172) y k = 4 da segmentos interpretables con tamaños útiles
+  (el menor tiene el 7,7 %).
+- **Algoritmo final: K-Means.** Con k = 4 obtiene el mejor Davies-Bouldin (1,91) y Calinski-Harabasz (6.262) y un
+  Silhouette igual al jerárquico (0,164); GMM queda por debajo (Silhouette 0,090). Es estable entre semillas
+  (ARI medio 0,79).
+- **GMM:** el BIC prefiere covarianza *full* con k = 7: describe mejor la densidad, pero con componentes difíciles de
+  interpretar como segmentos.
+- **Jerárquico:** *average* y *complete* dejan un cluster con más del 80 % de los clientes; *ward* es el único que
+  produce grupos equilibrados. El acuerdo con K-Means es moderado (ARI = 0,35 en la muestra; 0,55 con GMM).
+- El Silhouette bajo indica un continuo de clientes más que grupos muy separados: los segmentos se usan como resumen
+  útil para la campaña.
 
 ## Perfiles y relación con la aceptación
-_(Completar: nombre y descripción de cada segmento, tasa de aceptación por segmento, prueba chi-cuadrado
-y recomendaciones de focalización de campañas.)_
+
+| Cluster | Segmento | Tamaño | Aceptación |
+|---|---|---|---|
+| 0 | Nuevos sin canal registrado (mayo-junio, con hipoteca, *blue-collar*) | 45,6 % | 9,0 % |
+| 1 | Nuevos de verano contactados por celular (sin hipoteca, *management*) | 36,2 % | 9,5 % |
+| 2 | Recontactados antiguos con campaña fallida (`pdays` ≈ 337) | 7,7 % | 13,4 % |
+| 3 | Recontactados recientes con historial positivo (mayor balance) | 10,5 % | **29,8 %** |
+
+Tasa global de aceptación: 11,7 %. La relación entre segmento y aceptación es significativa (chi-cuadrado = 1.392,
+p ≈ 1,6·10⁻³⁰¹).
+
+**Recomendaciones de focalización:** priorizar el segmento 3 con recontacto temprano y pocas llamadas; contactar a los
+clientes nuevos por celular (14,8 % de aceptación frente a 4,1 % con canal desconocido) y fuera de mayo (6,7 %);
+registrar el canal de contacto del segmento 0; y cambiar la oferta para los
+recontactados con campañas fallidas.

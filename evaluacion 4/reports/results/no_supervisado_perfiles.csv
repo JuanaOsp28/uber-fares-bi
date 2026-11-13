@@ -1,0 +1,5 @@
+cluster,proporcion,age,balance,day,campaign,pdays,previous,contact,default,education,housing,job,loan,marital,month,poutcome
+0,0.4559831895598319,39.68,1207.66,13.94,2.54,-1.0,0.0,unknown,no,secondary,yes,blue-collar,no,married,may,unknown
+1,0.3619774386197744,42.41,1464.61,18.96,3.4,-1.0,0.0,cellular,no,secondary,no,management,no,married,jul,unknown
+2,0.0771953107719531,38.97,1072.56,12.39,2.18,337.36,3.15,cellular,no,secondary,yes,blue-collar,no,married,may,failure
+3,0.10484406104844061,42.34,1925.41,15.66,1.96,142.43,3.23,cellular,no,secondary,no,management,no,married,nov,failure
