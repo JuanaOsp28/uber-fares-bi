@@ -6,6 +6,15 @@
 **Repositorio:** https://github.com/JuanaOsp28/uber-fares-bi (esta evaluación vive en la carpeta `evaluacion 4`;
 el resto del repositorio corresponde a la actividad anterior sobre tarifas de Uber).
 
+## Integrantes
+
+| Integrante | Parte |
+|---|---|
+| Víctor Manuel David Rodríguez | Estructura del repositorio, configuración, carga de datos y análisis comparativo |
+| David Viloria | EDA, preprocesamiento y relevancia de variables |
+| Samuel Metaute Restrepo | Componente supervisado |
+| Juana Ospina | Componente no supervisado |
+
 ## 1. Descripción del problema
 
 Una institución financiera realiza campañas telefónicas para ofrecer un **depósito a plazo**.
@@ -40,9 +49,11 @@ evaluacion 4/
 │   ├── 02_modelos_supervisados.md
 │   ├── 03_modelos_no_supervisados.md
 │   └── 04_analisis_comparativo.md
-└── reports/
-    ├── figures/                  # Gráficas generadas
-    └── results/                  # Tablas de métricas (CSV)
+├── reports/
+│   ├── figures/                  # Gráficas generadas
+│   └── results/                  # Tablas de métricas (CSV)
+└── video/
+    └── presentacion_equipo4.mp4  # Video de presentación del equipo
 ```
 
 ## 3. Instrucciones de ejecución
@@ -78,16 +89,35 @@ El notebook supervisado incluye una búsqueda de hiperparámetros que puede tard
 
 ## 6. Principales resultados
 
-> _Completar al final, cuando los tres notebooks estén ejecutados._
+**Componente supervisado** (conjunto de prueba, modelos optimizados; detalle en `notebooks/02_supervisado.ipynb`):
 
 | Modelo supervisado | Precision | Recall | F1 | ROC-AUC | PR-AUC |
 |---|---|---|---|---|---|
-| _…_ | | | | | |
+| Regresión logística | 0,235 | 0,680 | 0,349 | 0,756 | 0,373 |
+| Random Forest | 0,486 | 0,493 | 0,490 | 0,806 | 0,461 |
+| **Gradient Boosting (elegido)** | 0,353 | 0,646 | 0,457 | 0,806 | **0,467** |
+
+Se eligió **Gradient Boosting** por el mayor PR-AUC y un recall mucho más alto que Random Forest (encuentra el 64,6 %
+de los clientes que aceptan). Llamando solo a los clientes con probabilidad ≥ 0,5 se hacen 79 % menos llamadas y la
+ganancia estimada pasa de 1.537 a 4.897. Las variables más influyentes son el mes, el tipo de contacto y el resultado
+de la campaña anterior.
+
+**Componente no supervisado** (detalle en `notebooks/03_no_supervisado.ipynb`):
 
 | Algoritmo de clustering | k | Silhouette | Davies-Bouldin |
 |---|---|---|---|
-| _…_ | | | |
+| **K-Means (elegido)** | 4 | 0,164 | 1,906 |
+| Mezcla gaussiana | 4 | 0,090 | 3,702 |
+| Jerárquico Ward (muestra) | 4 | 0,164 | 1,861 |
+
+K-Means encontró cuatro segmentos con aceptaciones muy distintas: clientes nuevos sin canal registrado (9,0 %), nuevos
+de verano contactados por celular (9,5 %), recontactados con campaña fallida (13,4 %) y **recontactados recientes con
+historial positivo (29,8 %)**, frente a una tasa global de 11,7 %.
+
+**Conclusión conjunta:** los dos enfoques coinciden en que la aceptación depende sobre todo de la campaña y del
+historial de contacto, no del perfil demográfico. El modelo supervisado sirve para **priorizar a quién llamar** y la
+segmentación para **personalizar canal, momento y oferta**. Análisis completo en `docs/04_analisis_comparativo.md`.
 
 ## 7. Video de presentación
 
-Enlace (máx. 12 min): _pendiente_
+Video del equipo (11 min 53 s): [`video/presentacion_equipo4.mp4`](video/presentacion_equipo4.mp4)
