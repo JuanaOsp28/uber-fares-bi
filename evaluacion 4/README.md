@@ -8,12 +8,12 @@ el resto del repositorio corresponde a la actividad anterior sobre tarifas de Ub
 
 ## Integrantes
 
-| Integrante | Parte |
-|---|---|
-| Víctor Manuel David Rodríguez | Estructura del repositorio, configuración, carga de datos y análisis comparativo |
-| David Viloria | EDA, preprocesamiento y relevancia de variables |
-| Samuel Metaute Restrepo | Componente supervisado |
-| Juana Ospina | Componente no supervisado |
+| Integrante 
+|---
+| Víctor Manuel David Rodríguez 
+| David Viloria 
+| Samuel Metaute Restrepo 
+| Juana Ospina 
 
 ## 1. Descripción del problema
 
