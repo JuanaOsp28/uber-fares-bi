@@ -15,6 +15,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Video pesado (subir solo el enlace en el README)
+# Videos pesados: solo se versiona el video final de la presentación
 *.mp4
 *.mov
+!video/presentacion_equipo4.mp4
